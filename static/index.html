@@ -2,13 +2,20 @@
 <html>
 <head>
 <title>查令街84号</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/index.css" type="text/css"></link>
 
   
 </head>
 <body>
 <h1>吃吃吃</h1>
 <p>喝喝喝</p>
+<p>你是第{{number}}个进入页面的人</p>
+<p>这个数字是后台传送过来的，你通过两个大括号可以取得这个值，也可以是一个json格式的数据，这是django模板系统所定义的方法</p>
+
+<a href="https://docs.djangoproject.com/en/1.9/topics/templates/" target="_blank">django 模板系统英文官方文档</a>
+<a href="http://www.cnblogs.com/btchenguang/archive/2012/08/25/2655929.html" target="_blank">django 模板中文资料</a>
+
 	
 </body>
+<script src="{{STATIC_URL}}js/index.js"></script>
 </html>
-	
