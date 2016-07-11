@@ -2,20 +2,125 @@
 <html>
 <head>
 <title>查令街84号</title>
-    <link rel="stylesheet" href="{{STATIC_URL}}css/index.css" type="text/css"></link>
+    <link rel="stylesheet"  href="http://cdn.amazeui.org/amazeui/2.7.1/css/amazeui.min.css" type="text/css"></link>
 
   
 </head>
 <body>
-<h1>吃吃吃</h1>
-<p>喝喝喝</p>
-<p>你是第{{number}}个进入页面的人</p>
+<div class="banner">
+<h1>欢迎来到查令街84号</h1>
+    <div class="am-g">
+  <div class="am-u-sm-4">
+      <div class="am-panel-group" id="accordion">
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-1'}">
+        打开1
+      </h4>
+    </div>
+    <div id="do-not-say-1" class="am-panel-collapse am-collapse am-in">
+      <div class="am-panel-bd">
+        1
+      </div>
+    </div>
+  </div>
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+        打开2
+      </h4>
+    </div>
+    <div id="do-not-say-2" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+        我有一个美丽的愿望
+长大以后能播种太阳
+播种一颗一颗就够了
+会结出许多的许多的太阳
+一颗送给送给南极
+一颗送给送给北冰洋
+一颗挂在挂在冬天
+一颗挂在晚上 挂在晚上
+啦啦啦 种太阳
+啦啦啦 种太阳
+啦啦啦啦 啦啦啦啦
+种太阳
+到那个时候世界每个角落
+都会变得 都会变得温暖又明亮
+
+我有一个美丽的愿望
+长大以后能播种太阳
+播种一颗一颗就够了
+会结出许多的许多的太阳
+一颗送给送给南极
+一颗送给送给北冰洋
+一颗挂在挂在冬天
+一颗挂在晚上 挂在晚上
+啦啦啦 种太阳
+啦啦啦 种太阳
+啦啦啦啦 啦啦啦啦
+种太阳
+到那个时候世界每个角落
+都会变得 都会变得温暖又明亮
+      </div>
+    </div>
+  </div>
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">打开3</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+        打开是笨蛋
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="am-u-sm-8">
+      <div class="am-dropdown" data-am-dropdown>
+  <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>下拉列表 <span class="am-icon-caret-down"></span></button>
+  <ul class="am-dropdown-content">
+    <li class="am-dropdown-header">你怎么又</li>
+    <li><a href="https//www.baidu.com">打开了</a></li>
+    <li class="am-active"><a href="#">都说了</a></li>
+    <li><a href="#">打开的</a></li>
+    <li class="am-disabled"><a href="#">是</a></li>
+    <li class="am-divider"></li>
+    <li><a href="#">笨</a></li>
+      <li class="am-divider"></li>
+    <li><a href="#">蛋</a></li>
+  </ul>
+</div>
+  </div>
+        </div>
+        <div class="am-g">
+        <div class="am-u-sm-4 am-u-sm-centered">
+   <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+  <ul class="am-slides">
+    <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+    <li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
+      <li><img src="http://s.amazeui.org/media/i/demos/bing-3.jpg" /></li>
+    <li><img src="http://s.amazeui.org/media/i/demos/bing-4.jpg" /></li>
+  </ul>
+</div>
+
+
+        </div>
+</div>
+<h2>你好{{name}}</h2>
+<p>你是第{{number}}个进入页面</p>
 <p>这个数字是后台传送过来的，你通过两个大括号可以取得这个值，也可以是一个json格式的数据，这是django模板系统所定义的方法</p>
 
 <a href="https://docs.djangoproject.com/en/1.9/topics/templates/" target="_blank">django 模板系统英文官方文档</a>
 <a href="http://www.cnblogs.com/btchenguang/archive/2012/08/25/2655929.html" target="_blank">django 模板中文资料</a>
+<textarea id="inp"></textarea>
+<button>input</button>
+</div>
+<script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://cdn.amazeui.org/amazeui/2.7.1/js/amazeui.min.js"></script>
+<!--<script src="http://cdn.amazeui.org/amazeui/2.7.1/js/amazeui.ie8polyfill.min.js"></script>-->
 
-	
 </body>
-<script src="{{STATIC_URL}}js/index.js"></script>
+
+
 </html>
