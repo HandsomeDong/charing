@@ -23,11 +23,11 @@ class PyCrypt:
         plain_text = cryptor.decrypt(a2b_hex(text))
         return plain_text.rstrip(b'\0').decode()
 
-pc = PyCrypt('123abc')
+pc = PyCrypt('12345678abcdefgh')
 
 
 if __name__ == '__main__':
-    pc = PyCrypt('123abc')      #初始化密钥
+    pc = PyCrypt('12345678abcdefgh')      #初始化密钥
     e = pc.encrypt("00000")
     d = pc.decrypt(e)
     print(e, d)

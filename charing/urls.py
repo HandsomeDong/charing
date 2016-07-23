@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^$', 'index.views.main', name='main'),
     url(r'^register/', 'usermanager.views.register', name='register'),
     url(r'^submit_register/', 'usermanager.views.submit_register', name='submit_register'),
+    url(r'^check_email/', 'usermanager.views.check_email', name='check_email'),
 
 ]
 

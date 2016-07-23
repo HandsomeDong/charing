@@ -1,5 +1,4 @@
 from django.shortcuts import render, render_to_response
-from index.models import Person
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 
 
