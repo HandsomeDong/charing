@@ -19,7 +19,9 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'index.views.main', name='main'),
-    url(r'^register/', 'index.views.register', name='register')
+    url(r'^register/', 'usermanager.views.register', name='register'),
+    url(r'^submit_register/', 'usermanager.views.submit_register', name='submit_register'),
+
 ]
 
 

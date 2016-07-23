@@ -1,11 +1,20 @@
 $(function(){
 
-   $.when($('#form1').validator('isFormValid')).then(function() {
-// 验证成功的逻辑
-alert('ok');
-}, function() {
-// 验证失败的逻辑
-alert('no');
-});　　
 
 })
+
+
+$('#myButton').on('click', submit_register)
+
+  function submit_register(){
+  var url_str = "/submit_register/";
+  var param = {"name":"lsd", "password":"123456"};
+    var $btn = $(this).button('loading')
+    	$.post(url_str, param , function(result) {
+			console.log(result);
+$btn.button('reset')
+		});
+
+
+
+  }

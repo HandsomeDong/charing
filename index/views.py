@@ -17,9 +17,4 @@ def main(request):
     # p.save()
     return render_to_response("index.html",{"STATIC_URL":"/static/","number":num,"name":name})
 
-def login(request):
-    return
 
-def register(request):
-    print(request.POST)
-    return render_to_response("register.html",{"STATIC_URL":"/static/"})
