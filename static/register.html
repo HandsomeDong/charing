@@ -1,24 +1,136 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <link href="{{STATIC_URL}}image/favicon.ico" rel="icon" type="image/x-icon" />
-<title>查令街84号</title>
-    <link rel="stylesheet"  href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"></link>
-
-  
+    <link href="{{STATIC_URL}}image/favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>查令街84号</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/BootSideMenu.css" type="text/css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/index.css" type="text/css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/createMailbox.css" type="text/css">
 </head>
 <body>
-<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-  submit
-</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/register/">
+                            <img class="media-object mailbox" src="{{STATIC_URL}}image/mailboxwithlove.png">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h1>Welcome to Charing No. 84!</h1>
+                        <p><a id="my-register-link" class="btn btn-primary btn-lg" role="button">Create My Mailbox</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">.col-md-8</div>
+    </div>
+    <!--
+    <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+        submit
+    </button>
+    -->
 
-  </div>
 </div>
+<div id="demo">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+                <ul class="nav nav-tabs mg_top" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#home" aria-controls="home" role="tab"data-toggle="tab">Sign In</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Join Now</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="input-group mg_top">
+                        <span class="input-group-addon" id="basic-addon1">
+                            <img class="img_size" src="{{STATIC_URL}}image/mailbox_register.ico">
+                        </span>
+                        <input id="mailbox_name" type="text" class="form-control" placeholder="Mailbox's Name"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <span id="mailbox-name-alert" style="display: none">用户名已经被使用</span>
+
+                    <div class="input-group mg_top">
+                        <span class="input-group-addon" id="basic-addon2">
+                            <img class="img_size" src="{{STATIC_URL}}image/key_register.ico">
+                        </span>
+                        <input id="mailbox_key" type="password" class="form-control" placeholder="Mailbox's Key"
+                               aria-describedby="basic-addon2">
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <button type="button" id="signIn" data-loading-text="Loading..." class="btn btn-primary btn_width mg_top" autocomplete="off">
+                                Sign In
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="input-group mg_top">
+                        <span class="input-group-addon" id="basic-addon1">
+                            <img class="img_size" src="{{STATIC_URL}}image/mailbox_register.ico">
+                        </span>
+                        <input id="mailbox_name" type="text" class="form-control" placeholder="Mailbox's Name"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <span id="mailbox-name-alert" style="display: none">用户名已经被使用</span>
+
+                    <div class="input-group mg_top">
+                        <span class="input-group-addon" id="basic-addon2">
+                            <img class="img_size" src="{{STATIC_URL}}image/key_register.ico">
+                        </span>
+                        <input id="mailbox_key" type="password" class="form-control" placeholder="Mailbox's Key"
+                               aria-describedby="basic-addon2">
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <button type="button" id="signIn" data-loading-text="Loading..." class="btn btn-primary btn_width mg_top" autocomplete="off">
+                                Sign In
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}js/BootSideMenu.js"></script>
 <script src="{{STATIC_URL}}js/register.js"></script>
+<script type="text/javascript">
+    $('#demo').BootSideMenu({
+        side: "right",
+        autoClose: true
+    });
+    $(function () {
 
+    });
+</script>
 </body>
 
 
