@@ -1,22 +1,24 @@
 $(function(){
 
-$('#myButton').on('click', submit_register)
-  function submit_register(){
-  var url_str = "/submit_register/";
-  var param = {"address":"lsdhhh", "password":"123"};
-    var $btn = $(this).button('loading')
-    	$.post(url_str, param , function(result) {
-			console.log(result);
-    $btn.button('reset')
-		});
-  }
-    $(document).ready(function(){
-        //激活tooltip，必须。
-        $("[data-toggle='tooltip']").tooltip();
-    });
+    $('#myButton').on('click', submit_register)
+
+    function submit_register(){
+        var url_str = "/submit_register/";
+        var param = {"address":"lsdhhh", "password":"123"};
+        var $btn = $(this).button('loading')
+        $.post(url_str, param , function(result) {
+            console.log(result);
+            $btn.button('reset')
+        });
+    }
+
+    //激活tooltip，必须。
+    $("[data-toggle='tooltip']").tooltip();
+
 
 
     $("#joinNow").on("click",function(){
+        var $btn = $(this).button('loading');
         var $mailbox_name = $("#mailbox_name_join");
         var $mailbox_key = $("#mailbox_key_join");
         var flag = true;
@@ -41,16 +43,31 @@ $('#myButton').on('click', submit_register)
             $.post('/submit_register/', { address: mailbox_name,password: mailbox_key}, function (stat) {
                 console.log(stat["register_success"]);
                 if(!stat["register_success"]){
-                $("#mailbox-name-alert").show();
+                    $mailbox_name.parent().addClass("has-error");
+                    $mailbox_name.attr("data-original-title","已有人拥有该信箱，请再想一个ID吧~");
+                    // $("[data-toggle='tooltip']").tooltip();
+                    $mailbox_name.tooltip('show');
+                    $("#register_success").hide();
+                    //$("#register_fail").show();
                 }
+                else{
+                    $("#register_success").show();
+                    $("#register_fail").hide();
+                }
+                $btn.button('reset');
             });
         }
-
+        else
+        {
+            $btn.button('reset');
+        }
     });
 
     $("#mailbox_name_join").on("click",function(){
         var $mailbox_name = $("#mailbox_name_join");
         var $mailbox_key = $("#mailbox_key_join");
+
+        $mailbox_name.attr("data-original-title","信箱ID可以由字母、数字、下划线和中文组成，以中文或字母开头，长度为6-16位。");
 
         $mailbox_name.parent().removeClass("has-error");
         if( $mailbox_key.parent().hasClass("has-error")){
@@ -64,7 +81,6 @@ $('#myButton').on('click', submit_register)
         var $mailbox_key = $("#mailbox_key_join");
 
         $mailbox_key.parent().removeClass("has-error");
-
     });
 
 })

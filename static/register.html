@@ -31,11 +31,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">.col-md-8</div>
     </div>
-    <!--
+
     <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
         submit
     </button>
-    -->
+
 
 </div>
 <div id="demo">
@@ -79,7 +79,7 @@
 
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
-                            <button type="button" id="signIn" data-loading-text="请耐心等待..." class="btn btn-primary btn_width mg_top" autocomplete="off">
+                            <button type="button" id="signIn" data-loading-text="请耐心等待..." class="btn btn-primary btn_width mg_top_input" autocomplete="off">
                                 查阅此信箱
                             </button>
                         </div>
@@ -96,7 +96,7 @@
                                title="信箱ID可以由字母、数字、下划线和中文组成，以中文或字母开头，长度为6-16位。">
                     </div>
 
-                    <span id="mailbox-name-alert" style="display: none">ID已经被使用!</span>
+                    <span id="register_fail" style="display: none">ID已经被使用!</span>
 
                     <div class="input-group mg_top_input">
                         <span class="input-group-addon" id="basic-addon2">
@@ -108,9 +108,11 @@
 
                     </div>
 
+                    <span id="register_success" style="display: none">您已修建好此信箱~继续前行吧！</span>
+
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
-                            <button type="button" id="joinNow" data-loading-text="请耐心等待..." data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" class="btn btn-primary btn_width mg_top" autocomplete="off">
+                            <button type="button" id="joinNow" data-loading-text="请耐心等待..." class="btn btn-primary btn_width mg_top_input" autocomplete="off">
                                 修建此信箱
                             </button>
                         </div>
@@ -119,6 +121,7 @@
             </div>
         </div>
     </div>
+</div>
 
 </div>
 
