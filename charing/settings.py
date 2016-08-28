@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'charing.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'charing',
+        'USER': 'webserver',
+        'PASSWORD': '940430',
+        'HOST': '124.42.117.95',
+        'PORT': '3306',
     }
 }
 
