@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response
-from usermanager.models import User
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 from usermanager.tool import random_str
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
@@ -7,7 +8,17 @@ import time
 
 
 def login(request):
-    return
+    username = request.POST.get("address")
+    password = request.POST.get("password")
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
+        # Redirect to a success page.
+        return JsonResponse({'stat':True})
+
+    else:
+        # Return an 'invalid login' error message.
+        return JsonResponse({'stat': False})
 
 
 def register(request):
@@ -19,19 +30,15 @@ def register(request):
 def submit_register(request):
     address = request.POST.get("address")
     pwd = request.POST.get("password")
-    avaliable = User.objects.filter(address=address)
-    if len(avaliable) == 0:
-        user = User.objects.create(userid=random_str(), password=pwd, address=address)
-        user.save()
-        return JsonResponse({"status": "OK", "register_success": True})
-    else:
-        return JsonResponse({"status": "OK", "register_success": False})
+    user = User.objects.create_user(address, password=pwd)
+    user.save()
+    return JsonResponse({"status": "OK", "register_success": True})
 
 
 @csrf_exempt
 def check_email(request):
     address = request.POST.get("address")
-    avaliable = User.objects.filter(address=address)
+    avaliable = User.objects.filter(username=address)
     if len(avaliable) == 0:
         return JsonResponse({"status": "OK", "register_success": True})
     else:
