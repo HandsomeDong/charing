@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'charing',
         'USER': 'webserver',
         'PASSWORD': '940430',
-        'HOST': 'localhost',
+        'HOST': '121.201.15.70',
         'PORT': '3306',
     }
 }
