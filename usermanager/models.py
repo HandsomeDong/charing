@@ -1,19 +1,27 @@
-from django.contrib.auth.models import User
 from django.db import models
-from usermanager.cryptocode import pc
-from usermanager.tool import random_str
+from django.contrib.auth.models import User
+
+
+class Mail(models.Model):
+    title = models.CharField(max_length=80)
+    content = models.CharField(max_length=3000)
+    opened = models.BooleanField(default=False)
+
+
+class MailBox(models.Model):
+    def __init__(self):
+        Mail.objects.filter(title='88')
+    belong = models.ForeignKey(User)
+    address = models.CharField(max_length=30)
+    receive_box = models.ManyToManyField(Mail)
+    send_box = models.ManyToManyField(Mail)
 
 
 
 
-# class User(models.Model):
-#     userid = models.CharField(max_length=60, null=True)
-#     password = models.CharField(max_length=100, null=True)
-#     address = models.CharField(max_length=100, null=True)
-#
-#     def save(self, *args, **kwargs):
-#         self.password = pc.encrypt(self.password)
-#         self.Id = random_str()
-#         super(User, self).save(*args, **kwargs)
+
+
+
+
 
 

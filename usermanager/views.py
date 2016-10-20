@@ -13,11 +13,8 @@ def login(request):
     user = authenticate(username=username, password=password)
     if user is not None:
         login(request, user)
-        # Redirect to a success page.
-        return JsonResponse({'stat':True})
-
+        return JsonResponse({'stat': True})
     else:
-        # Return an 'invalid login' error message.
         return JsonResponse({'stat': False})
 
 
@@ -30,6 +27,8 @@ def register(request):
 def submit_register(request):
     address = request.POST.get("address")
     pwd = request.POST.get("password")
+    if len(User.objects.filter(username=address)) != 0:
+        return JsonResponse({"status": "OK", "register_success": False})
     user = User.objects.create_user(address, password=pwd)
     user.save()
     return JsonResponse({"status": "OK", "register_success": True})

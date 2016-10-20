@@ -71,6 +71,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'charing.wsgi.application'
 
 
@@ -83,7 +84,7 @@ DATABASES = {
         'NAME': 'charing',
         'USER': 'webserver',
         'PASSWORD': '940430',
-        'HOST': '121.201.15.28',
+        'HOST': '121.201.15.70',
         'PORT': '3306',
     }
 }
@@ -129,6 +130,4 @@ STATIC_URL = '/static/'
 # STATIC_ROOT=os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), '../static').replace('\\','/'),
-)
+
