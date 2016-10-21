@@ -13,8 +13,6 @@ class Mail(models.Model):
     receiver = models.ForeignKey(MailBox, related_name='receiver')
     sender = models.ForeignKey(MailBox, related_name='sender', default=-1)
 
-if __name__ == '__main__':
-  mailBox = MailBox
 
 
 
