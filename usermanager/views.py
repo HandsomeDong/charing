@@ -18,9 +18,6 @@ def login(request):
         return JsonResponse({'stat': False})
 
 
-def register(request):
-    print(request.POST)
-    return render_to_response("register.html", {"STATIC_URL": "/static/"})
 
 
 @csrf_exempt
